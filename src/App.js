@@ -1,25 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from '@emotion/styled'
+
+const Contenedor = styled.div`
+  display: flex;
+  align-items: center;
+  padding-top: 5rem;
+  flex-direction: column;
+`
+
+const Boton = styled.button`
+  background: linear-gradient(to left, #007d35 0%, #007d35 40%, #0f574e 100%);
+  background-size: 300px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  margin-top: 3rem;
+  padding: 1rem 3rem;
+  font-size: 2rem;
+  border: solid 2px black;
+`
 
 function App() {
+  const consultarAPI = () => {
+    console.log('consultando...')
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Contenedor>
+      <Boton
+        onClick={consultarAPI}
+      >
+        Obtener Frase
+      </Boton>
+    </Contenedor>
   );
 }
 
